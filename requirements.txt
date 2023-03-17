@@ -1,0 +1,4 @@
+Flask==2.1.1
+Flask-WTF==1.1.0
+WTForms==3.0.1
+telethon==1.27.0

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white shadow p-8 rounded">
+    <h1 class="text-2xl mb-4">Add Account</h1>
+    <form action="" method="post" novalidate>
+        {{ add_account_form.csrf_token }}
+        {{ add_account_form.phone_number.label }}: {{ add_account_form.phone_number(class="border px-2 py-1 rounded") }}<br>
+        {{ add_account_form.api_id.label }}: {{ add_account_form.api_id(class="border px-2 py-1 rounded") }}<br>
+        {{ add_account_form.api_hash.label }}: {{ add_account_form.api_hash(class="border px-2 py-1 rounded") }}<br>
+        {{ add_account_form.submit(class="bg-blue-500 text-white px-4 py-2 rounded mt-4") }}
+    </form>
+</div>
+
+<div class="bg-white shadow p-8 rounded mt-8">
+    <h1 class="text-2xl mb-4">Switch Account</h1>
+    <form action="" method="post" novalidate>
+        {{ switch_account_form.csrf_token }}
+        {{ switch_account_form.account_id.label }}: {{ switch_account_form.account_id(class="border px-2 py-1 rounded") }}<br>
+        {{ switch_account_form.submit(class="bg-blue-500 text-white px-4 py-2 rounded mt-4") }}
+    </form>
+</div>
+
+<div class="bg-white shadow p-8 rounded mt-8">
+    <h1 class="text-2xl mb-4">Send Message</h1>
+    <form action="" method="post" novalidate>
+        {{ send_message_form.csrf_token }}
+        {{ send_message_form.telegram_id.label }}: {{ send_message_form.telegram_id(class="border px-2 py-1 rounded") }}<br>
+        {{ send_message_form.message.label }}: {{ send_message_form.message(class="border px-2 py-1 rounded h-32") }}<br>
+        {{ send_message_form.submit(class="bg-blue-500 text-white px-4 py-2 rounded mt-4") }}
+    </form>
+</div>
+{% endblock %}

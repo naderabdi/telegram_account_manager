@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Account Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.min.css') }}">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        {% for message in get_flashed_messages(with_categories=true) %}
+            <div class="bg-{{ message[0] }}-200 p-4 mb-4 rounded">
+                {{ message[1] }}
+            </div>
+        {% endfor %}
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
